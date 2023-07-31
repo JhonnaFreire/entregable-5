@@ -3,6 +3,7 @@ import useFetch from "../hooks/useFetch";
 import { useEffect, useRef, useState } from "react";
 import PokeCard from "../components/PokedexPage/PokeCard";
 import "/src/components/PokedexPage/styles/PokedexPage.css";
+import pokedex from '/src/assets/img/pokedex.png'
 
 const PokedexPage = () => {
   const [inputValue, setInputValue] = useState("");
@@ -44,7 +45,7 @@ const PokedexPage = () => {
   return (
     <>
       <header className="header">
-        <img className="header__img" src="/src/assets/img/pokedex.png" alt="" />
+        <img className="header__img" src={pokedex} />
       </header>
       <div className="body">
         <p className="welcome">
