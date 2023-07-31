@@ -1,0 +1,99 @@
+.card__container {
+  width: 500px;
+  height: 100%;
+  border-radius: 0.7;
+  border: 0.7em solid;
+  margin: 0 auto;
+}
+.img {
+  display: block;
+  margin: 0 auto;
+}
+.name {
+  text-align: center;
+  text-transform: capitalize;
+  font-size: 1.5rem;
+  font-weight: 400;
+  margin-top: 10px;
+  margin-bottom: 5px;
+}
+.pokecard__types {
+  display: flex;
+  justify-content: center;
+  gap: 0.5em;
+  margin-bottom: 1em;
+}
+.pokecard__type__name {
+  text-transform: capitalize;
+}
+.hr {
+  margin-bottom: 1em;
+  border: 1px solid #ccc4;
+}
+.stats__list {
+  list-style: none;
+  padding: 0;
+}
+.list {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 5px;
+}
+.habilities__names {
+  font-size: 0.9rem;
+  font-weight: 450;
+  text-transform: uppercase;
+  padding-left: 5px;
+}
+.habilities__value {
+  font-weight: 600;
+  font-size: 1em;
+  padding-right: 8px;
+}
+.fire-border {
+    border-color: #f35e27;
+  }
+  .grass-border {
+    border-color: #81c2a6;
+  }
+  .water-border {
+    border-color: #45ebe2;
+  }
+  .bug-border {
+    border-color: #36c234;
+  }
+  .normal-border {
+    border-color: #d89c4e;
+  }
+  .poison-border {
+    border-color: #a01188;
+  }
+  .electric-border {
+    border-color: #eedd47;
+  }
+  .ground-border {
+    border-color: #8a8989;
+  }
+  .fairy-border {
+      border-color: #ffaaf6;
+  }
+  .fighting-border {
+      border-color: #2f3d69;
+  }
+  .rock-border {
+      border-color: #7d8292 ;
+  }
+  .ghost-border {
+      border-color: #babbc0;
+  }
+  .psychic-border {
+      border-color: #d85229;
+  }
+  .dark-color {
+    color: #181615;
+  }
+@media screen and (max-width: 600px) {
+  .card__container {
+    max-width: 100%;
+  }
+}

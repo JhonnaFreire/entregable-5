@@ -1,0 +1,109 @@
+.header {
+  background-color: red;
+  padding: 0.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.header img {
+    max-width: 50%;
+}
+.body {
+  max-width: 1300px;
+  margin: 0 auto;
+  padding: 20px;
+}
+.welcome {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+.welcome_paragraph {
+  color: #333;
+}
+.trainer__name {
+  color: red;
+  text-transform: capitalize;
+}
+.form__page {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+.input__bar {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px 0 0 5px;
+  flex: 0.3;
+}
+.button__page {
+  padding: 10px 20px;
+  background-color: red;
+  color: #fff;
+  border: none;
+  border-radius: 0 5px 5px 0;
+  cursor: pointer;
+}
+.button__page:hover {
+  background-color: darkred;
+}
+.item__list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  padding-bottom: 30px;
+  gap: 15px;
+}
+.buttons_container {
+  display: flex;
+  justify-content: center;
+}
+.page-button {
+  justify-content: center;
+  padding: 8px 8px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin-right: 5px;
+  cursor: pointer;
+}
+.page-button.active {
+  background-color: red;
+  color: #fff;
+  border-color: red;
+}
+.page-button:hover {
+  background-color: darkred;
+  border-color: darkred;
+}
+@media screen and (max-width: 600px) {
+  .body {
+    padding: 10px;
+  }
+  .welcome {
+    font-size: 20px;
+  }
+  .form__page {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .input__bar {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+  .button__page {
+    margin-left: 0;
+    width: 100%;
+  }
+  .item__list {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .page-button {
+    margin-right: 0;
+    margin-bottom: 5px;
+    width: 30px;
+  }
+}
+@media screen and (max-width: 430px) {
+  .item__list {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}

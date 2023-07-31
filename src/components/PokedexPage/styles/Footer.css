@@ -1,0 +1,26 @@
+.footer {
+  background-color: red;
+  padding: 0.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.footer__text {
+  font-size: 1rem;
+  color: #fff;
+}
+.footer__logo {
+  width: 60px;
+  height: 65px;
+  margin-right: 1rem;
+}
+@media screen and (max-width: 600px) {
+    .footer {
+        flex-direction: column;
+        text-align: center;
+    }
+    .footer__logo {
+        margin-right: 0;
+        margin-bottom: 0.5rem;
+    }
+}
