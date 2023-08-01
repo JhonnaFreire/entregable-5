@@ -1,0 +1,45 @@
+.filter__botton {
+  width: 200px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 1rem;
+  background-color: #fff;
+  color: #333;
+  cursor: pointer;
+  position: absolute;
+  top: 270px;
+  right: 325px;
+  z-index: 9999;
+  text-transform: capitalize;
+}
+.filter__container:focus {
+  outline: none;
+}
+.filter__title {
+  font-weight: bold;
+  text-transform: capitalize;
+}
+.filter__names {
+  text-transform: capitalize;
+}
+@media screen and (max-width: 1224px) {
+    .filter__container {
+      display: flex;
+      justify-content: center;
+      padding: 30px;
+    }
+    .filter__botton {
+      top: 250px;
+      left: 20px;
+      width: 36%;
+    }
+  }
+  @media screen and (max-width: 600px) {
+   
+    .filter__botton {
+      top: 250px;
+      left: 10px;
+      width: 95%;
+    }
+  }

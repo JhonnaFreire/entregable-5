@@ -3,20 +3,29 @@ import useFetch from "../hooks/useFetch";
 import { useEffect, useRef, useState } from "react";
 import PokeCard from "../components/PokedexPage/PokeCard";
 import "/src/components/PokedexPage/styles/PokedexPage.css";
-import pokedex from '/src/assets/img/pokedex.png'
+import pokedex from "/src/assets/img/pokedex.png";
+import SelectType from "../components/PokedexPage/SelectType";
 
 const PokedexPage = () => {
   const [inputValue, setInputValue] = useState("");
   const [currentPage, setCurrentPage] = useState(1);
+  const [selectValue, setSelectValue] = useState('allPokemons');
   const itemsPerPage = 20;
 
+  console.log(selectValue)
+
   const trainer = useSelector((reducer) => reducer.trainer);
-  const url = "https://pokeapi.co/api/v2/pokemon?offset=0&limit=300";
-  const [pokemons, getAllPokemons] = useFetch(url);
+
+  const url = "https://pokeapi.co/api/v2/pokemon?offset=0&limit=200";
+  const [pokemons, getAllPokemons, getPokemonsByType] = useFetch(url);
 
   useEffect(() => {
-    getAllPokemons();
-  }, []);
+    if(selectValue === 'allPokemons'){
+      getAllPokemons();
+    } else {
+      getPokemonsByType(selectValue)
+    }
+  }, [selectValue]);
 
   const inputSearch = useRef();
 
@@ -26,7 +35,10 @@ const PokedexPage = () => {
     setCurrentPage(1);
   };
 
-  const cbFilter = (poke) => poke.name.includes(inputValue);
+  const cbFilter = (poke) => {
+    const filterInput = poke.name.includes(inputValue)
+    return filterInput
+  };
 
   const indexOfLastPokemon = currentPage * itemsPerPage;
   const indexOfFirstPokemon = indexOfLastPokemon - itemsPerPage;
@@ -58,6 +70,7 @@ const PokedexPage = () => {
           <input className="input__bar" ref={inputSearch} type="text" />
           <button className="button__page">Search</button>
         </form>
+        <SelectType setSelectValue={setSelectValue} />
         <div className="item__list">
           {currentPokemons?.map((poke) => (
             <PokeCard key={poke.url} url={poke.url} />
